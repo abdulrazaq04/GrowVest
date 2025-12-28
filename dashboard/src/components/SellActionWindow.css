@@ -1,0 +1,113 @@
+/* Main container */
+#sell-window {
+  position: fixed;
+  top: 22%;
+  left: 35%;
+  width: 360px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  cursor: move;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Order section */
+#sell-window .regular-order {
+  padding: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Input container */
+#sell-window .inputs {
+  display: flex;
+  gap: 12px;
+}
+
+/* Fieldset reset */
+#sell-window fieldset {
+  flex: 1;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 6px 8px 10px;
+}
+
+/* Legend */
+#sell-window legend {
+  font-size: 0.7rem;
+  color: #8a8a8a;
+  padding: 0 6px;
+}
+
+/* Input fields */
+#sell-window input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  padding-top: 4px;
+}
+
+/* Footer buttons section */
+#sell-window .buttons {
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+}
+
+/* Label text */
+#sell-window .buttons span {
+  font-size: 0.75rem;
+  color: #7a7a7a;
+}
+
+/* Buttons wrapper */
+#sell-window .buttons div {
+  display: flex;
+  gap: 8px;
+}
+
+/* SELL button */
+.btn-red {
+  background: #ff5722;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-red:hover {
+  background: #e64a19;
+}
+
+/* Cancel button */
+.btn-grey {
+  background: #e0e0e0;
+  color: #444;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-grey:hover {
+  background: #d2d2d2;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #sell-window {
+    width: 90%;
+    left: 5%;
+    top: 15%;
+  }
+}

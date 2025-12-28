@@ -1,0 +1,111 @@
+/* Main container */
+#buy-window {
+  position: fixed;
+  top: 20%;
+  left: 35%;
+  width: 360px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  cursor: move;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Order section */
+.regular-order {
+  padding: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Input container */
+.inputs {
+  display: flex;
+  gap: 12px;
+}
+
+/* Fieldset reset */
+.inputs fieldset {
+  flex: 1;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 6px 8px 10px;
+}
+
+/* Legend */
+.inputs legend {
+  font-size: 0.7rem;
+  color: #8a8a8a;
+  padding: 0 6px;
+}
+
+/* Input fields */
+.inputs input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  padding-top: 4px;
+}
+
+/* Footer buttons section */
+.buttons {
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+}
+
+/* Margin text */
+.buttons span {
+  font-size: 0.75rem;
+  color: #7a7a7a;
+}
+
+/* Buttons wrapper */
+.buttons div {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buy button */
+.btn-blue {
+  background: #4184f3;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-blue:hover {
+  background: #2f6fe0;
+}
+
+/* Cancel button */
+.btn-grey {
+  background: #e0e0e0;
+  color: #444;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-grey:hover {
+  background: #d2d2d2;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #buy-window {
+    width: 90%;
+    left: 5%;
+    top: 15%;
+  }
+}

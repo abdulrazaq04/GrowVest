@@ -1,0 +1,70 @@
+.orders {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.order-table {
+    margin-top: 20px;
+}
+
+.order-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-table th {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgb(145, 145, 145);
+    padding: 12px;
+    text-align: right;
+}
+
+.order-table th:first-child,
+.order-table td:first-child {
+    text-align: left;
+}
+
+.order-table td {
+    padding: 12px;
+    font-size: 0.9rem;
+    color: rgb(73, 73, 73);
+    text-align: right;
+}
+
+.order-table tr {
+    border-bottom: 1px solid #eee;
+}
+
+.order-badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.order-badge.buy {
+    background-color: #4184f3;
+}
+
+.order-badge.sell {
+    background-color: #ff5722;
+}
+
+.order-status.completed {
+    color: rgb(72, 194, 55);
+    font-weight: 500;
+}
+
+.no-orders {
+    text-align: center;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .order-table {
+        overflow-x: auto;
+    }
+}

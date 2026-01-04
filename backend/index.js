@@ -19,6 +19,8 @@ app.use(cors({
   origin: [
     "http://localhost:3000", // Auth app
     "http://localhost:3001",
+    "https://grow-vest-ivory.vercel.app",
+    "https://growvest-dashboard.vercel.app"
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,

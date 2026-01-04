@@ -42,15 +42,9 @@ const handleSubmit = async (e) => {
 
         if (success) {
             handleSuccess(message);
-
-            // Save JWT for dashboard app
-            if (token) {
-                localStorage.setItem("token", token);
-            }
-
             setTimeout(() => {
                 //FULL browser redirect
-                window.location.href = "http://localhost:3001";
+                window.location.href = "http://localhost:3001/";
             }, 1000);
         } else {
             handleError(message);
@@ -58,6 +52,7 @@ const handleSubmit = async (e) => {
 
     } catch (error) {
         handleError(error.response?.data?.message || "Login failed");
+        console.log(error);
     }
 
     setInputValue({

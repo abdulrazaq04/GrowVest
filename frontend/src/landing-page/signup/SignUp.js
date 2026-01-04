@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import "./signup.css";
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -29,45 +28,36 @@ const Signup = () => {
             position: "bottom-right",
         });
 
-const handleSubmit = async (e) => {
-    e.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const { data } = await axios.post(
 
-    try {
-        const { data } = await axios.post(
-            "http://localhost:3002/signup",
-            inputValue,
-            { withCredentials: true }
-        );
-
-        const { success, message, token } = data;
-
-        if (success) {
-            handleSuccess(message);
-
-            // Store token if backend sends it
-            if (token) {
-                localStorage.setItem("token", token);
+                "http://localhost:3002/signup",
+                {
+                    ...inputValue,
+                },
+                { withCredentials: true }
+            );
+            const { success, message } = data;
+            if (success) {
+                handleSuccess(message);
+                setTimeout(() => {
+                    navigate("/");
+                }, 1000);
+            } else {
+                handleError(message);
             }
-
-            setTimeout(() => {
-                // FULL redirect to dashboard app
-                window.location.href = "http://localhost:3001";
-            }, 1000);
-        } else {
-            handleError(message);
+        } catch (error) {
+            console.log(error);
         }
-
-    } catch (error) {
-        handleError(error.response?.data?.message || "Signup failed");
-    }
-
-    setInputValue({
-        email: "",
-        password: "",
-        username: "",
-    });
-};
-
+        setInputValue({
+            ...inputValue,
+            email: "",
+            password: "",
+            username: "",
+        });
+    };
 
     return (
         <div className="form_container">

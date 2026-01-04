@@ -23,7 +23,7 @@ root.render(
   <Navbar/>
     <Routes>
       <Route path='/' element={<HomePage/>}/>
-      <Route path="/Home" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/about' element={<AboutPage/>}/>

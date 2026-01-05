@@ -33,7 +33,7 @@ const Signup = () => {
         try {
             const { data } = await axios.post(
 
-                "http://localhost:3002/signup",
+                "https://growvest-042i.onrender.com/signup",
                 {
                     ...inputValue,
                 },

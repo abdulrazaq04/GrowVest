@@ -4,6 +4,7 @@ import axios from "axios";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import "./SellActionWindow.css";
+import api from "../axios";
 
 const SellActionWindow = ({ uid }) => {
     const generalContext = useContext(GeneralContext);
@@ -14,7 +15,7 @@ const SellActionWindow = ({ uid }) => {
 
     const handleSellClick = async () => {
         try {
-            const res = await axios.post("http://localhost:3002/sellOrder", {
+            const res = await api.post("/sellOrder", {
                 name: uid,
                 qty:qty,
                 price: price,

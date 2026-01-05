@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import api from "../axios";
 
 const Summary = () => {
   const [holdings, setHoldings] = useState([]);
@@ -10,8 +11,8 @@ const Summary = () => {
     const fetchSummaryData = async () => {
       try {
         const [balanceRes, holdingsRes] = await Promise.all([
-          axios.get("http://localhost:3002/balance"),
-          axios.get("http://localhost:3002/allHoldings"),
+          api.get("/balance"),
+          api.get("/allHoldings"),
         ]);
 
         setBalance(balanceRes.data.amount || 0);
@@ -47,6 +48,7 @@ const Summary = () => {
     : 0;
 
   const isProfit = pnl >= 0;
+  console.log(process.env.REACT_APP_API_URL);
 
   return (
     <>

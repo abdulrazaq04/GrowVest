@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Orders.css";
+import api from "../axios";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -10,7 +11,7 @@ const Orders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:3002/orders");
+        const res = await api.get("/orders");
         setOrders(res.data || []);
       } catch (error) {
         console.error("Failed to fetch orders", error);

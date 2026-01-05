@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import FundsModel from "./FundsModel";
+import api from "../axios";
 
 const Funds = () => {
   const [balance, setBalance] = useState(0);
@@ -11,7 +12,7 @@ const Funds = () => {
 
   useEffect(() => {
     const fetchBalance = async () => {
-      const res = await axios.get("http://localhost:3002/balance", {
+      const res = await api.get("/balance", {
         withCredentials: true,
       });
       setBalance(res.data.amount);
@@ -38,23 +39,23 @@ const Funds = () => {
   const handleFundSubmit = async (amount) => {
     try {
       if (modalType === "ADD") {
-        await axios.post(
-          "http://localhost:3002/addFunds",
+        await api.post(
+          "/addFunds",
           { amount },
           { withCredentials: true }
         );
       }
 
       if (modalType === "WITHDRAW") {
-        await axios.post(
-          "http://localhost:3002/withdrawFunds",
+        await api.post(
+          "/withdrawFunds",
           { amount },
           { withCredentials: true }
         );
       }
 
-      // 🔁 Refresh balance after update
-      const res = await axios.get("http://localhost:3002/balance", {
+      // Refresh balance after update
+      const res = await api.get("/balance", {
         withCredentials: true,
       });
       setBalance(res.data.amount);
